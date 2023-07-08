@@ -1,6 +1,6 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
-import emulators from 'https://cdn.jsdelivr.net/npm/emulators@0.73.8/+esm';
-import emulatorsUi from 'https://cdn.jsdelivr.net/npm/emulators-ui@0.73.9/+esm';
+// import emulators from 'https://cdn.jsdelivr.net/npm/emulators@0.73.8/+esm';
+// import emulatorsui from 'https://cdn.jsdelivr.net/npm/emulators-ui@0.73.9/+esm';
 
 const img = document.createElement("canvas");
 img.width = 320;
@@ -18,13 +18,13 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 
 document.getElementById("root").appendChild(renderer.domElement);
 
-const geometry = new THREE.PlaneGeometry(2,2);
+const geometry = new THREE.BoxGeometry(2,2,1);
 const material = new THREE.MeshBasicMaterial({
     map: texture,
 });
-const plane = new THREE.Mesh( geometry, material );
+const cube = new THREE.Mesh( geometry, material );
 
-scene.add( plane );
+scene.add( cube );
 
 camera.position.z = 2;
 
